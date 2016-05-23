@@ -1,0 +1,24 @@
+{
+  "name": "eq8-core",
+  "version": "0.0.0",
+  "description": "EQuateJS Core API Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/test.*.js | faucet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eq8/eq8-core.git"
+  },
+  "keywords": [
+    "eq8",
+    "eq8js",
+    "equatejs"
+  ],
+  "author": "bbartolome",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/eq8/eq8-core/issues"
+  },
+  "homepage": "https://eq8.js.org"
+}
