@@ -1,10 +1,12 @@
 {
   "name": "eq8-core",
-  "version": "0.1.0-rc1",
+  "version": "0.1.0-rc2",
   "description": "EQuateJS Core API Library",
   "main": "index.js",
   "scripts": {
     "audit": "nsp check",
+    "build": "npm shrinkwrap && npm run build:doc",
+    "build:doc": "doctoc --github --title \"## Contents\" ./",
     "deps": "npm run deps:missing && npm run deps:extra",
     "deps:missing": "dependency-check package.json",
     "deps:extra": "dependency-check package.json --extra --no-dev --ignore",
@@ -13,7 +15,7 @@
     "precommit": "npm run lint",
     "prepush": "npm run test",
     "test": "tape test/test.*.js | faucet",
-    "cover": "istanbul cover test/test.index.js test/test.api.js",
+    "cover": "istanbul cover test/test.index.js",
     "analyze": "plato -d analysis index.js ./lib/api/*.js"
   },
   "repository": {
@@ -42,6 +44,7 @@
   },
   "devDependencies": {
     "dependency-check": "2.5.1",
+    "doctoc": "1.1.1",
     "eslint": "2.9.0",
     "eslint-config-eslint": "3.0.0",
     "faucet": "0.0.1",
@@ -50,6 +53,7 @@
     "npm-check-updates": "2.6.4",
     "nsp": "2.3.2",
     "plato": "1.5.0",
+    "proxyquire": "1.7.9",
     "tape": "4.5.1"
   },
   "eslintConfig": {
