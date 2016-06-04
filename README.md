@@ -1,5 +1,35 @@
 # eq8-core
+
+[![npm](https://img.shields.io/npm/v/eq8-core.svg?maxAge=2592000)](https://npmjs.com/package/eq8-core) [![node](https://img.shields.io/node/v/eq8-core.svg?maxAge=2592000)](https://npmjs.com/package/eq8-core)
+[![David](https://img.shields.io/david/eq8/eq8-core.svg?maxAge=2592000)](https://david-dm.org/eq8/eq8-core) [![codecov](https://codecov.io/gh/eq8/eq8-core/branch/master/graph/badge.svg)](https://codecov.io/gh/eq8/eq8-core)
+
 EQuateJS Core API Library
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Contents
+
+- [Installation](#installation)
+- [API](#api)
+  - [Event: 'trigger'](#event-trigger)
+  - [Event: 'search'](#event-search)
+  - [Event: 'listening'](#event-listening)
+  - [new Core([options])](#new-coreoptions)
+    - [Parameters:](#parameters)
+  - [Core#chainListener(e, listener, done)](#corechainlistenere-listener-done)
+    - [Parameters:](#parameters-1)
+  - [Core#addRegistrar(registrars, done)](#coreaddregistrarregistrars-done)
+    - [Parameters:](#parameters-2)
+  - [Core#register(registries, done)](#coreregisterregistries-done)
+    - [Parameters:](#parameters-3)
+  - [Core#trigger(e, done)](#coretriggere-done)
+    - [Parameters:](#parameters-4)
+  - [Core#search(q, done)](#coresearchq-done)
+    - [Parameters:](#parameters-5)
+  - [Core#listen(port, done)](#corelistenport-done)
+    - [Parameters:](#parameters-6)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Installation
 
@@ -43,7 +73,7 @@ Constructor for this EQuateJS Core API library - i.e. `eq8-core`
 
 Similar to `EventEmitter.addListener` except it removes the previously chained listener and adds it as a `prior` argument for the newly chained listener.
 
-#### For example:
+**For example:**
 
 ```
 var Core = require('eq8-core');
@@ -72,7 +102,7 @@ async.parallel([
 });
 ```
 
-#### Result:
+**Result:**
 
 ```
 topOfStack: someEvent
@@ -89,7 +119,7 @@ bottomOfStack: someEvent
 
 Chains a listener for `register:<registryKey>` events that occur during a `Core#register` method call
 
-#### For example:
+**For example:**
 
 ```
 var Core = require('eq8-core');
@@ -119,7 +149,7 @@ api.register(registries);
 
 ```
 
-#### Result:
+**Result:**
 
 ```
 create actions: [ { e: 'e1' }, { e: 'e2' } ]
