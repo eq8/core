@@ -1,6 +1,6 @@
 {
   "name": "eq8-core",
-  "version": "0.1.0-rc2",
+  "version": "0.1.0-rc3",
   "dependencies": {
     "async": {
       "version": "2.0.0-rc.3",

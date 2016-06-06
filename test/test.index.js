@@ -14,17 +14,13 @@ test('test lib/index', function(t) {
 test('Core#trigger', function(t) {
 	var core = new Core();
 	var fixtureAction = 'someArbitraryAction';
-	var fixtureError = 'someArbitraryError';
 
-	t.plan(2);
-	core.on('trigger', function(e, done) {
+	t.plan(1);
+	core.on('trigger', function(e) {
 		t.equal(e, fixtureAction);
-		done(fixtureError);
 	});
 
-	core.trigger(fixtureAction, function(err) {
-		t.equal(err, fixtureError);
-	});
+	core.trigger(fixtureAction);
 });
 
 test('Core#search', function(t) {
