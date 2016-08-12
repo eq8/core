@@ -1,55 +1,47 @@
 {
   "name": "eq8-core",
-  "version": "0.1.0-rc3",
+  "version": "0.1.0",
+  "npm-shrinkwrap-version": "200.5.1",
+  "node-version": "v4.4.7",
   "dependencies": {
     "async": {
       "version": "2.0.0-rc.3",
-      "from": "https://registry.npmjs.org/async/-/async-2.0.0-rc.3.tgz",
       "resolved": "https://registry.npmjs.org/async/-/async-2.0.0-rc.3.tgz"
     },
     "lodash": {
       "version": "4.11.2",
-      "from": "https://registry.npmjs.org/lodash/-/lodash-4.11.2.tgz",
       "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.11.2.tgz"
     },
     "winston": {
       "version": "2.2.0",
-      "from": "https://registry.npmjs.org/winston/-/winston-2.2.0.tgz",
       "resolved": "https://registry.npmjs.org/winston/-/winston-2.2.0.tgz",
       "dependencies": {
         "async": {
           "version": "1.0.0",
-          "from": "https://registry.npmjs.org/async/-/async-1.0.0.tgz",
           "resolved": "https://registry.npmjs.org/async/-/async-1.0.0.tgz"
         },
         "colors": {
           "version": "1.0.3",
-          "from": "https://registry.npmjs.org/colors/-/colors-1.0.3.tgz",
           "resolved": "https://registry.npmjs.org/colors/-/colors-1.0.3.tgz"
         },
         "cycle": {
           "version": "1.0.3",
-          "from": "https://registry.npmjs.org/cycle/-/cycle-1.0.3.tgz",
           "resolved": "https://registry.npmjs.org/cycle/-/cycle-1.0.3.tgz"
         },
         "eyes": {
           "version": "0.1.8",
-          "from": "https://registry.npmjs.org/eyes/-/eyes-0.1.8.tgz",
           "resolved": "https://registry.npmjs.org/eyes/-/eyes-0.1.8.tgz"
         },
         "isstream": {
           "version": "0.1.2",
-          "from": "https://registry.npmjs.org/isstream/-/isstream-0.1.2.tgz",
           "resolved": "https://registry.npmjs.org/isstream/-/isstream-0.1.2.tgz"
         },
         "pkginfo": {
           "version": "0.3.1",
-          "from": "https://registry.npmjs.org/pkginfo/-/pkginfo-0.3.1.tgz",
           "resolved": "https://registry.npmjs.org/pkginfo/-/pkginfo-0.3.1.tgz"
         },
         "stack-trace": {
           "version": "0.0.9",
-          "from": "https://registry.npmjs.org/stack-trace/-/stack-trace-0.0.9.tgz",
           "resolved": "https://registry.npmjs.org/stack-trace/-/stack-trace-0.0.9.tgz"
         }
       }
