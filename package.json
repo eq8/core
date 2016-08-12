@@ -10,7 +10,7 @@
     "deps": "npm run deps:missing && npm run deps:extra",
     "deps:missing": "dependency-check package.json",
     "deps:extra": "dependency-check package.json --extra --no-dev --ignore",
-    "upgrade": "ncu -u",
+    "upgrade": "ncu -u --semverLevel major && rm -rf node_modules npm-shrinkwrap.json && npm install && npm-shrinkwrap",
     "lint": "eslint lib test",
     "precommit": "npm run lint",
     "prepush": "npm run test",
@@ -35,28 +35,28 @@
   },
   "homepage": "https://eq8.js.org",
   "engines": {
-    "node": ">=4.4.5 <5.0.0",
-    "npm": ">=2.15.5 <3.0.0"
+    "node": ">=4.5.0 <5.0.0",
+    "npm": ">=2.15.9 <3.0.0"
   },
   "dependencies": {
-    "async": "2.0.0-rc.3",
-    "lodash": "4.11.2",
+    "async": "2.0.1",
+    "lodash": "4.16.1",
     "winston": "2.2.0"
   },
   "devDependencies": {
-    "dependency-check": "2.5.1",
-    "doctoc": "1.1.1",
-    "eslint": "2.9.0",
+    "dependency-check": "2.6.0",
+    "doctoc": "1.2.0",
+    "eslint": "2.13.1",
     "eslint-config-eslint": "3.0.0",
     "faucet": "0.0.1",
-    "husky": "0.11.4",
-    "istanbul": "0.4.3",
-    "npm-check-updates": "2.6.4",
+    "husky": "0.11.8",
+    "istanbul": "0.4.5",
+    "npm-check-updates": "2.8.0",
     "npm-shrinkwrap": "200.5.1",
-    "nsp": "2.3.2",
-    "plato": "1.5.0",
-    "proxyquire": "1.7.9",
-    "tape": "4.5.1"
+    "nsp": "2.6.1",
+    "plato": "1.7.0",
+    "proxyquire": "1.7.10",
+    "tape": "4.6.0"
   },
   "eslintConfig": {
     "extends": "eslint",
