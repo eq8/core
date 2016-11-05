@@ -1,7 +1,7 @@
 {
   "name": "eq8-core",
   "version": "0.1.0",
-  "npm-shrinkwrap-version": "200.5.1",
+  "npm-shrinkwrap-version": "6.0.2",
   "node-version": "v4.5.0",
   "dependencies": {
     "async": {

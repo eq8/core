@@ -52,7 +52,7 @@
     "husky": "0.11.9",
     "istanbul": "0.4.5",
     "npm-check-updates": "2.8.6",
-    "npm-shrinkwrap": "200.5.1",
+    "npm-shrinkwrap": "6.0.2",
     "nsp": "2.6.2",
     "plato": "1.7.0",
     "proxyquire": "1.7.10",
