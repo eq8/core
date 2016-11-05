@@ -22,7 +22,7 @@ The core API provides an ability to register handlers for events and queries, bu
 - [Installation](#installation)
 - [Events](#events)
   - [Event: 'dispatch'](#event-dispatch)
-  - [Event: 'observe'](#event-observe)
+  - [Event: 'subscribe'](#event-subscribe)
   - [Event: 'listening'](#event-listening)
   - [Event: 'register:*registry*'](#event-registerregistry)
 - [Constructor](#constructor)
@@ -30,7 +30,7 @@ The core API provides an ability to register handlers for events and queries, bu
 - [Methods](#methods)
   - [Core#dispatch(e, done)](#coredispatche-done)
     - [Parameters](#parameters-1)
-  - [Core#observe(q, done)](#coreobserveq-done)
+  - [Core#subscribe(q, done)](#coresubscribeq-done)
     - [Parameters](#parameters-2)
   - [Core#listen(port, done)](#corelistenport-done)
     - [Parameters](#parameters-3)
@@ -58,9 +58,9 @@ Basically, `eq8-core` extends the [`EventEmitter`](https://nodejs.org/dist/lates
 
 Emitted when `Core#dispatch` gets called
 
-### Event: 'observe'
+### Event: 'subscribe'
 
-Emitted when `Core#observe` gets called
+Emitted when `Core#subscribe` gets called
 
 ### Event: 'listening'
 
@@ -83,7 +83,7 @@ var api = new Core(options);
   - `logger` is a `winston.Logger` options object
   - `on` is an object with the following properties:
      - `dispatch` is an array of `dispatch` event listeners
-     - `observe` is an array of `observe` event listeners
+     - `subscribe` is an array of `subscribe` event listeners
      - `listening` is an array of `listening` event listeners
 
 ## Methods
@@ -96,9 +96,9 @@ Emits a `dispatch` event and passes the parameters `e` and `done` to the event h
 
 - `e` is an arbitrary object to represent a command event
 
-### Core#observe(q, done)
+### Core#subscribe(q, done)
 
-Emits a `observe` event and passes the parameters `q` and `done` to the event handler
+Emits a `subscribe` event and passes the parameters `q` and `done` to the event handler
 
 #### Parameters
 
