@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/eq8-core.svg?maxAge=2592000)](https://npmjs.com/package/eq8-core) [![node](https://img.shields.io/node/v/eq8-core.svg?maxAge=2592000)](https://npmjs.com/package/eq8-core) [![David](https://img.shields.io/david/eq8/eq8-core.svg?maxAge=2592000)](https://david-dm.org/eq8/eq8-core) [![Travis](https://travis-ci.org/eq8/eq8-core.svg?branch=master)](https://travis-ci.org/eq8/eq8-core) [![codecov](https://codecov.io/gh/eq8/eq8-core/branch/master/graph/badge.svg)](https://codecov.io/gh/eq8/eq8-core)
 
-EQuateJS Core API Library - A loose implementation of [CQRS](http://martinfowler.com/bliki/CQRS.html)/[ES](http://martinfowler.com/eaaDev/EventSourcing.html) for managing application state.
+EQuateJS Core API Library - A loose interface for [CQRS](http://martinfowler.com/bliki/CQRS.html)/[ES](http://martinfowler.com/eaaDev/EventSourcing.html)
 
 ## Overview
 
@@ -21,16 +21,16 @@ The core API provides an ability to register handlers for events and queries, bu
 
 - [Installation](#installation)
 - [Events](#events)
-  - [Event: 'trigger'](#event-trigger)
-  - [Event: 'search'](#event-search)
+  - [Event: 'dispatch'](#event-dispatch)
+  - [Event: 'observe'](#event-observe)
   - [Event: 'listening'](#event-listening)
   - [Event: 'register:*registry*'](#event-registerregistry)
 - [Constructor](#constructor)
   - [Parameters](#parameters)
 - [Methods](#methods)
-  - [Core#trigger(e)](#coretriggere)
+  - [Core#dispatch(e, done)](#coredispatche-done)
     - [Parameters](#parameters-1)
-  - [Core#search(q, done)](#coresearchq-done)
+  - [Core#observe(q, done)](#coreobserveq-done)
     - [Parameters](#parameters-2)
   - [Core#listen(port, done)](#corelistenport-done)
     - [Parameters](#parameters-3)
@@ -54,13 +54,13 @@ npm install --save eq8-core
 
 Basically, `eq8-core` extends the [`EventEmitter`](https://nodejs.org/dist/latest-v4.x/docs/api/events.html#events_class_eventemitter) class and has the following events:
 
-### Event: 'trigger'
+### Event: 'dispatch'
 
-Emitted when `Core#trigger` gets called
+Emitted when `Core#dispatch` gets called
 
-### Event: 'search'
+### Event: 'observe'
 
-Emitted when `Core#search` gets called
+Emitted when `Core#observe` gets called
 
 ### Event: 'listening'
 
@@ -82,23 +82,23 @@ var api = new Core(options);
 - `options` is an optional object
   - `logger` is a `winston.Logger` options object
   - `on` is an object with the following properties:
-     - `trigger` is an array of `trigger` event listeners
-     - `search` is an array of `search` event listeners
+     - `dispatch` is an array of `dispatch` event listeners
+     - `observe` is an array of `observe` event listeners
      - `listening` is an array of `listening` event listeners
 
 ## Methods
 
-### Core#trigger(e)
+### Core#dispatch(e, done)
 
-Emits a `trigger` event and passes the parameters `e` and `done` to the event handler
+Emits a `dispatch` event and passes the parameters `e` and `done` to the event handler
 
 #### Parameters
 
 - `e` is an arbitrary object to represent a command event
 
-### Core#search(q, done)
+### Core#observe(q, done)
 
-Emits a `search` event and passes the parameters `q` and `done` to the event handler
+Emits a `observe` event and passes the parameters `q` and `done` to the event handler
 
 #### Parameters
 
@@ -135,15 +135,15 @@ function topOfStack(e, done, prior) {
   prior(e, done);
 }
 
-async.parallel([
+async.series([
   function(done) {
-    api.chainListener('trigger', bottomOfStack, done);
+    api.chainListener('dispatch', bottomOfStack, done);
   },
   function(done) {
-    api.chainListener('trigger', topOfStack, done); 
+    api.chainListener('dispatch', topOfStack, done); 
   }
-], function parallelDone() {
-  api.trigger('someEvent');
+], function seriesDone() {
+  api.dispatch('someEvent');
 });
 ```
 

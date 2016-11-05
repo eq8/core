@@ -4,38 +4,38 @@ var test = require('tape');
 var proxyquire = require('proxyquire');
 var Core = require('../index.js');
 
-// add-registrar.js  chain-listener.js  listen.js	register.js  search.js	trigger.js
+// add-registrar.js  chain-listener.js  listen.js	register.js  observe.js	dispatch.js
 
 test('test lib/index', function(t) {
 	t.plan(1);
 	t.ok(true, 'placeholder');
 });
 
-test('Core#trigger', function(t) {
+test('Core#dispatch', function(t) {
 	var core = new Core();
 	var fixtureAction = 'someArbitraryAction';
 
 	t.plan(1);
-	core.on('trigger', function(e) {
+	core.on('dispatch', function(e) {
 		t.equal(e, fixtureAction);
 	});
 
-	core.trigger(fixtureAction);
+	core.dispatch(fixtureAction);
 });
 
-test('Core#search', function(t) {
+test('Core#observe', function(t) {
 	var core = new Core();
 	var fixtureQuery = 'someArbitraryQuery';
 	var fixtureError = 'someArbitraryError';
 	var fixtureResult = 'someArbitraryResult';
 
 	t.plan(3);
-	core.on('search', function(q, done) {
+	core.on('observe', function(q, done) {
 		t.equal(q, fixtureQuery);
 		done(fixtureError, fixtureResult);
 	});
 
-	core.search(fixtureQuery, function(err, result) {
+	core.observe(fixtureQuery, function(err, result) {
 		t.equal(err, fixtureError);
 		t.equal(result, fixtureResult);
 	});
