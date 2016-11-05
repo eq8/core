@@ -17,7 +17,8 @@
     "test": "tape test/test.*.js | faucet",
     "cover": "istanbul cover test/test.index.js",
     "analyze": "plato -d analysis index.js ./lib/api/*.js",
-    "shrinkwrap": "npm-shrinkwrap"
+    "shrinkwrap": "npm-shrinkwrap",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -56,6 +57,7 @@
     "nsp": "2.6.2",
     "plato": "1.7.0",
     "proxyquire": "1.7.10",
+    "semantic-release": "4.3.5",
     "tape": "4.6.2"
   },
   "eslintConfig": {
