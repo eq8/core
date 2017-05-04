@@ -23,7 +23,6 @@ The core API provides an ability to register handlers for events and queries, bu
 - [Events](#events)
   - [Event: 'dispatch'](#event-dispatch)
   - [Event: 'subscribe'](#event-subscribe)
-  - [Event: 'listening'](#event-listening)
   - [Event: 'register:*registry*'](#event-registerregistry)
 - [Constructor](#constructor)
   - [Parameters](#parameters)
@@ -32,14 +31,12 @@ The core API provides an ability to register handlers for events and queries, bu
     - [Parameters](#parameters-1)
   - [Core#subscribe(q, done)](#coresubscribeq-done)
     - [Parameters](#parameters-2)
-  - [Core#listen(port, done)](#corelistenport-done)
-    - [Parameters](#parameters-3)
   - [Core#chainListener(e, listener, done)](#corechainlistenere-listener-done)
-    - [Parameters](#parameters-4)
+    - [Parameters](#parameters-3)
   - [Core#addRegistrar(registrars, done)](#coreaddregistrarregistrars-done)
-    - [Parameters](#parameters-5)
+    - [Parameters](#parameters-4)
   - [Core#register(registries, done)](#coreregisterregistries-done)
-    - [Parameters](#parameters-6)
+    - [Parameters](#parameters-5)
 - [Appendices](#appendices)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -62,10 +59,6 @@ Emitted when `Core#dispatch` gets called
 
 Emitted when `Core#subscribe` gets called
 
-### Event: 'listening'
-
-Emitted when the created `http.Server` object starts listening after a `Core#listen` method call
-
 ### Event: 'register:*registry*'
 
 Emitted when `Core#register` gets called for a specific *registry*
@@ -84,7 +77,6 @@ var api = new Core(options);
   - `on` is an object with the following properties:
      - `dispatch` is an array of `dispatch` event listeners
      - `subscribe` is an array of `subscribe` event listeners
-     - `listening` is an array of `listening` event listeners
 
 ## Methods
 
@@ -104,15 +96,6 @@ Emits a `subscribe` event and passes the parameters `q` and `done` to the event 
 
 - `q` is an arbitrary object to represent a query event
 - `done` is an arbitrary callback function but conventionally takes an error-first argument: `var done = function(err, ...){ ...}`
-
-### Core#listen(port, done)
-
-Creates an `http.Server` object and emits a `listening` event
-
-#### Parameters
-
-- `port` is an integer that the created `http.Server` object will be listening to
-- `done` is a callback function that accepts an `http.Server` argument: `var done = function(httpServer){ ... }`
 
 ### Core#chainListener(e, listener, done)
 

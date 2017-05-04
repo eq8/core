@@ -1,7 +1,6 @@
 'use strict';
 
 var test = require('tape');
-var proxyquire = require('proxyquire');
 var Core = require('../index.js');
 
 // add-registrar.js  chain-listener.js  listen.js	register.js  subscribe.js	dispatch.js
@@ -82,42 +81,5 @@ test('Core#chainListener', function(t) {
 		prior(args);
 	}, function() {
 		core.emit(fixtureEvent, fixtureArgs);
-	});
-});
-
-test('Core#listen', function(t) {
-	var _ = require('lodash');
-	var EventEmitter = require('events');
-	var core = new EventEmitter();
-
-	var fixturePort = 80;
-	var httpStub = {
-		createServer: function() {
-			return {
-				assertHttpServer: function() {
-					t.pass();
-				},
-				listen: function(port, done) {
-					t.pass();
-					t.equal(port, fixturePort);
-					done();
-				}
-			};
-		}
-	};
-	var apiListen = proxyquire('../lib/api/listen.js', {
-		'http': httpStub
-	});
-
-	t.plan(4);
-
-	core.listen = apiListen(_);
-
-	core.on('listening', function(httpServer) {
-		httpServer.assertHttpServer();
-	});
-
-	core.listen(fixturePort, function(httpServer) {
-		httpServer.assertHttpServer();
 	});
 });
