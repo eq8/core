@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eq8/eq8-core.git"
+    "url": "git+https://github.com/eq8/eq8js-core.git"
   },
   "keywords": [
     "eq8",
@@ -37,7 +37,7 @@
   "author": "bbartolome",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/eq8/eq8-core/issues"
+    "url": "https://github.com/eq8/eq8js-core/issues"
   },
   "homepage": "https://eq8.js.org",
   "engines": {
