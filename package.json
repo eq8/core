@@ -58,7 +58,7 @@
     "ghooks": "2.0.0",
     "istanbul": "0.4.5",
     "npm-check-updates": "2.11.1",
-    "nsp": "2.6.3",
+    "nsp": "2.7.0",
     "plato": "1.7.0",
     "semantic-release": "6.3.6",
     "tape": "4.6.3",
