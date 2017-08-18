@@ -60,7 +60,7 @@
     "npm-check-updates": "2.11.1",
     "nsp": "2.7.0",
     "plato": "1.7.0",
-    "semantic-release": "7.0.1",
+    "semantic-release": "7.0.2",
     "tape": "4.6.3",
     "validate-commit-msg": "2.14.0"
   },
