@@ -57,7 +57,7 @@
     "faucet": "0.0.1",
     "ghooks": "2.0.0",
     "istanbul": "0.4.5",
-    "npm-check-updates": "2.11.1",
+    "npm-check-updates": "2.12.1",
     "nsp": "2.7.0",
     "plato": "1.7.0",
     "semantic-release": "7.0.2",
