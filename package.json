@@ -45,7 +45,7 @@
     "npm": ">=2.15.9 <3.0.0"
   },
   "dependencies": {
-    "async": "2.4.1",
+    "async": "2.5.0",
     "lodash": "4.17.4",
     "winston": "2.3.1"
   },
@@ -58,9 +58,9 @@
     "ghooks": "2.0.0",
     "istanbul": "0.4.5",
     "npm-check-updates": "2.12.1",
-    "nsp": "2.6.3",
+    "nsp": "2.7.0",
     "plato": "1.7.0",
-    "semantic-release": "6.3.6",
+    "semantic-release": "7.0.1",
     "tape": "4.6.3",
     "validate-commit-msg": "2.12.1"
   },
