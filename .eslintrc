@@ -1,0 +1,40 @@
+{
+	"extends": "eslint",
+		"env": {
+			"node": true
+		},
+		"parserOptions": {
+			"ecmaVersion": 6
+		},
+		"rules": {
+			"indent": [
+				"error",
+				"tab"
+			],
+			"quotes": [
+				"error",
+				"single"
+			],
+			"no-tabs": "off",
+			"no-invalid-this": "off",
+			"no-use-before-define": [
+				"error",
+				{
+					"functions": false
+				}
+			],
+			"new-cap": [
+				"error",
+				{
+					"capIsNew": false
+				}
+			],
+			"no-confusing-arrow": [
+				"error",
+				{
+					"allowParens": true
+				}
+			],
+			"require-jsdoc": "off"
+		}
+}
