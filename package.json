@@ -61,7 +61,7 @@
     "nsp": "2.7.0",
     "plato": "1.7.0",
     "semantic-release": "7.0.2",
-    "tape": "4.6.3",
+    "tape": "4.8.0",
     "validate-commit-msg": "2.14.0"
   },
   "eslintConfig": {
