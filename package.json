@@ -1,6 +1,5 @@
 {
   "name": "@eq8/core",
-  "version": "0.1.0",
   "description": "EQuateJS Core API Library",
   "main": "dist/eq8core.js",
   "scripts": {
