@@ -60,7 +60,7 @@
     "nsp": "2.7.0",
     "plato": "1.7.0",
     "rollup": "0.47.6",
-    "semantic-release": "7.0.2",
+    "semantic-release": "15.11.0",
     "tape": "4.8.0",
     "validate-commit-msg": "2.14.0"
   }
